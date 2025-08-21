@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول الدراسة - كلية المجتمع بلاد الروس</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- شريط علوي (Navbar) -->
+    <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">مساعد الطالب الذكي - </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html"><i class="fas fa-home ms-1"></i> الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="schedule.html"><i class="fas fa-calendar-alt ms-1"></i> جدول الدراسة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="notes.html"><i class="fas fa-sticky-note ms-1"></i> ملاحظاتي</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="contact.html"><i class="fas fa-envelope ms-1"></i> تواصل معنا</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-4">
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">جدول الدراسة الأسبوعي</h5>
+                        <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#addScheduleModal">
+                            إضافة حصة دراسية
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive schedule-table-container">
+                            <table class="table table-bordered text-center table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>اليوم / الوقت</th>
+                                        <th class="time-slot">8:00 - 10:00</th>
+                                        <th class="time-slot">10:00 - 12:00</th>
+                                        <th class="time-slot">12:00 - 2:00</th>
+                                        <th class="time-slot">2:00 - 4:00</th>
+                                        <th class="time-slot">4:00 - 6:00</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th class="table-light day-column">السبت</th>
+                                        <td id="sat-8-10" class="schedule-cell"></td>
+                                        <td id="sat-10-12" class="schedule-cell"></td>
+                                        <td id="sat-12-2" class="schedule-cell"></td>
+                                        <td id="sat-2-4" class="schedule-cell"></td>
+                                        <td id="sat-4-6" class="schedule-cell"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-light day-column">الأحد</th>
+                                        <td id="sun-8-10" class="schedule-cell"></td>
+                                        <td id="sun-10-12" class="schedule-cell"></td>
+                                        <td id="sun-12-2" class="schedule-cell"></td>
+                                        <td id="sun-2-4" class="schedule-cell"></td>
+                                        <td id="sun-4-6" class="schedule-cell"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-light day-column">الإثنين</th>
+                                        <td id="mon-8-10" class="schedule-cell"></td>
+                                        <td id="mon-10-12" class="schedule-cell"></td>
+                                        <td id="mon-12-2" class="schedule-cell"></td>
+                                        <td id="mon-2-4" class="schedule-cell"></td>
+                                        <td id="mon-4-6" class="schedule-cell"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-light day-column">الثلاثاء</th>
+                                        <td id="tue-8-10" class="schedule-cell"></td>
+                                        <td id="tue-10-12" class="schedule-cell"></td>
+                                        <td id="tue-12-2" class="schedule-cell"></td>
+                                        <td id="tue-2-4" class="schedule-cell"></td>
+                                        <td id="tue-4-6" class="schedule-cell"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-light day-column">الأربعاء</th>
+                                        <td id="wed-8-10" class="schedule-cell"></td>
+                                        <td id="wed-10-12" class="schedule-cell"></td>
+                                        <td id="wed-12-2" class="schedule-cell"></td>
+                                        <td id="wed-2-4" class="schedule-cell"></td>
+                                        <td id="wed-4-6" class="schedule-cell"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-light day-column">الخميس</th>
+                                        <td id="thu-8-10" class="schedule-cell"></td>
+                                        <td id="thu-10-12" class="schedule-cell"></td>
+                                        <td id="thu-12-2" class="schedule-cell"></td>
+                                        <td id="thu-2-4" class="schedule-cell"></td>
+                                        <td id="thu-4-6" class="schedule-cell"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- نسخة بديلة للشاشات الصغيرة جداً -->
+                        <div class="schedule-mobile-view d-none">
+                            <div class="accordion" id="scheduleAccordion">
+                                <!-- سيتم إنشاء المحتوى ديناميكياً عبر JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">المواد الدراسية</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul id="subjectsList" class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                الرياضيات
+                                <span class="badge bg-primary rounded-pill">4 ساعات</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                العلوم
+                                <span class="badge bg-primary rounded-pill">3 ساعات</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                اللغة العربية
+                                <span class="badge bg-primary rounded-pill">3 ساعات</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                اللغة الإنجليزية
+                                <span class="badge bg-primary rounded-pill">2 ساعات</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">نصائح لتنظيم الوقت</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✓ خصص وقتاً ثابتاً للدراسة كل يوم</li>
+                            <li class="mb-2">✓ ابدأ بالمادة الأصعب عندما تكون نشيطاً</li>
+                            <li class="mb-2">✓ استخدم تقنية البومودورو (25 دقيقة دراسة، 5 دقائق راحة)</li>
+                            <li>✓ قم بمراجعة جدولك الدراسي أسبوعياً</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة منبثقة لإضافة حصة دراسية -->
+    <div class="modal fade" id="addScheduleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">إضافة حصة دراسية</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="scheduleForm">
+                        <div class="mb-3">
+                            <label for="subjectName" class="form-label">المادة الدراسية</label>
+                            <input type="text" class="form-control" id="subjectName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="daySelect" class="form-label">اليوم</label>
+                            <select class="form-select" id="daySelect" required>
+                                <option value="sat">السبت</option>
+                                <option value="sun">الأحد</option>
+                                <option value="mon">الإثنين</option>
+                                <option value="tue">الثلاثاء</option>
+                                <option value="wed">الأربعاء</option>
+                                <option value="thu">الخميس</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="timeSelect" class="form-label">الوقت</label>
+                            <select class="form-select" id="timeSelect" required>
+                                <option value="8-10">8:00 - 10:00</option>
+                                <option value="10-12">10:00 - 12:00</option>
+                                <option value="12-2">12:00 - 2:00</option>
+                                <option value="2-4">2:00 - 4:00</option>
+                                <option value="4-6">4:00 - 6:00</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="classLocation" class="form-label">المكان (اختياري)</label>
+                            <input type="text" class="form-control" id="classLocation">
+                        </div>
+                        <div class="mb-3">
+                            <label for="classNotes" class="form-label">ملاحظات (اختياري)</label>
+                            <textarea class="form-control" id="classNotes" rows="2"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">حفظ الحصة</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-dark text-white mt-5 py-3">
+        <div class="container text-center">
+            <p>© 2025 كلية المجتمع بلاد الروس - سنحان. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/schedule.js"></script>
+</body>
+</html>

@@ -1,0 +1,678 @@
+/* تنسيقات عامة */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    padding: 0 15px;
+}
+
+/* تنسيقات شريط التنقل */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    padding: 10px 0;
+}
+
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* تنسيقات البطاقات */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* تنسيقات الأزرار */
+.btn {
+    border-radius: 20px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,.2);
+}
+
+/* تنسيقات قائمة المهام */
+.list-group-item {
+    border-radius: 10px !important;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.05);
+}
+
+.list-group-item:hover {
+    transform: translateX(5px);
+}
+
+/* تنسيقات الأولويات */
+.priority-high {
+    border-right: 5px solid #dc3545;
+}
+
+.priority-medium {
+    border-right: 5px solid #ffc107;
+}
+
+.priority-low {
+    border-right: 5px solid #28a745;
+}
+
+/* تنسيقات الجدول */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.table th {
+    background-color: #f1f1f1;
+    font-weight: 600;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* تنسيقات الملاحظات */
+.note-card {
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0,0,0,.1);
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+}
+
+/* تنسيقات النافذة المنبثقة */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.modal-header {
+    border-radius: 15px 15px 0 0;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-footer {
+    border-top: 1px solid #eee;
+}
+
+/* تنسيقات التذييل */
+footer {
+    margin-top: auto;
+    box-shadow: 0 -2px 10px rgba(0,0,0,.1);
+    padding: 20px 0;
+}
+
+/* تنسيقات الخريطة */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+    height: 250px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* تنسيقات إضافية */
+.badge {
+    font-size: 0.8em;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    touch-action: manipulation; /* تحسين استجابة اللمس */
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #fff;
+    background-color: #0d6efd;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+/* تحسينات خاصة باللمس للأجهزة المحمولة */
+.btn, .nav-link, .list-group-item, .card {
+    touch-action: manipulation; /* تحسين استجابة اللمس */
+    -webkit-tap-highlight-color: transparent; /* إزالة التمييز الافتراضي للنقر على iOS */
+}
+
+/* تحسين حجم النقر للأزرار الصغيرة */
+.btn-sm {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 6px 10px;
+}
+
+/* تحسين حجم النقر للأيقونات */
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* تحسين تجربة التمرير على الأجهزة المحمولة */
+html {
+    -webkit-overflow-scrolling: touch; /* تحسين التمرير على iOS */
+}
+
+/* تحسين روابط وسائل التواصل الاجتماعي */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    touch-action: manipulation;
+}
+
+/* تحسين النوافذ المنبثقة للأجهزة المحمولة */
+.modal-content {
+    touch-action: manipulation; /* تحسين استجابة اللمس */
+}
+
+/* تحسين الجداول للأجهزة ذات الشاشات اللمسية */
+.table-hover tbody tr {
+    touch-action: manipulation; /* تحسين استجابة اللمس */
+}
+
+/* تحسين عرض المهام على الشاشات الصغيرة */
+@media (max-width: 576px) {
+    .task-info {
+        margin-bottom: 10px;
+    }
+
+    .task-actions {
+        flex-direction: row !important;
+    }
+
+    .task-title {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .list-group-item {
+        padding: 12px 15px;
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .list-group-item .task-actions {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+
+    /* تحسين أزرار المهام للشاشات الصغيرة */
+    .complete-btn, .delete-btn {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+}
+
+/* تحسين عرض المهام على الشاشات المتوسطة */
+@media (max-width: 768px) {
+    .list-group-item {
+        padding: 10px 15px;
+    }
+
+    .task-title {
+        font-weight: 500;
+    }
+}
+
+/* تحسين الألوان حسب الأولوية */
+.priority-high {
+    border-right: 4px solid #dc3545;
+}
+
+.priority-medium {
+    border-right: 4px solid #ffc107;
+}
+
+.priority-low {
+    border-right: 4px solid #28a745;
+}
+
+/* تحسين شريط التقدم */
+.progress {
+    height: 10px;
+}
+
+.progress-bar {
+    transition: width 0.3s ease;
+}
+
+/* تنسيقات خاصة بجدول الدراسة */
+.schedule-table-container {
+    margin-bottom: 20px;
+}
+
+.schedule-cell {
+    min-height: 60px;
+    touch-action: manipulation;
+    position: relative;
+}
+
+.day-column {
+    min-width: 80px;
+    touch-action: manipulation;
+}
+
+.time-slot {
+    min-width: 100px;
+}
+
+/* تنسيقات نسخة الجدول للشاشات الصغيرة جداً */
+.schedule-mobile-view .accordion-item {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.schedule-mobile-view .accordion-header {
+    border-radius: 10px;
+}
+
+.schedule-mobile-view .accordion-button {
+    font-weight: bold;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.schedule-mobile-view .accordion-body {
+    padding: 0;
+}
+
+.schedule-mobile-view .time-slot-mobile {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    min-height: 60px;
+}
+
+.schedule-mobile-view .time-slot-mobile:last-child {
+    border-bottom: none;
+}
+
+.schedule-mobile-view .time-label {
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+.schedule-mobile-view .class-info {
+    background-color: #e9f5ff;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.schedule-mobile-view .class-title {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.schedule-mobile-view .class-location {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+/* إظهار نسخة الشاشات الصغيرة جداً وإخفاء الجدول الافتراضي */
+@media (max-width: 576px) {
+    .schedule-table-container {
+        display: none;
+    }
+
+    .schedule-mobile-view {
+        display: block !important;
+    }
+
+    /* تحسين عرض الملاحظات على الشاشات الصغيرة جداً */
+    #notesContainer {
+        display: none;
+    }
+
+    #notesMobileView {
+        display: block !important;
+    }
+
+    /* تحسين عرض بطاقات الملاحظات في الشاشات الصغيرة */
+    .note-card {
+        margin-bottom: 15px;
+    }
+
+    .note-card .card-body {
+        padding: 15px;
+    }
+
+    .note-card .card-title {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .note-card .card-text {
+        font-size: 0.95rem;
+    }
+
+    /* تحسين عرض الأكورديون للملاحظات على الشاشات الصغيرة */
+    .notes-accordion-item {
+        margin-bottom: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 6px rgba(0,0,0,.1);
+    }
+
+    .notes-accordion-button {
+        font-weight: bold;
+        padding: 12px 15px;
+    }
+
+    .notes-accordion-body {
+        padding: 15px;
+    }
+
+    .notes-badge {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+        border-radius: 20px;
+    }
+
+    .notes-actions {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+}
+
+/* تحسين عرض الملاحظات على الشاشات المتوسطة */
+@media (max-width: 768px) {
+    .note-card {
+        margin-bottom: 15px;
+    }
+}
+
+/* تنسيقات للشاشات الصغيرة جدًا (الهواتف) */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .nav-link {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        touch-action: manipulation; /* تحسين استجابة اللمس */
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        min-height: 44px; /* الحد الأدنى لارتفاع الزر لسهولة اللمس */
+        touch-action: manipulation; /* تحسين استجابة اللمس */
+    }
+
+    h5 {
+        font-size: 1.1rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .map-container {
+        height: 200px;
+    }
+
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .table th, .table td {
+        padding: 8px 5px;
+    }
+
+    /* تحسين النماذج للشاشات الصغيرة */
+    .form-control, .form-select {
+        font-size: 16px; /* منع التكبير التلقائي في iOS */
+        padding: 12px;
+    }
+
+    /* تحسين المسافات بين العناصر القابلة للنقر */
+    .list-group-item {
+        padding: 12px 15px;
+    }
+
+    /* تحسين أزرار الحذف والتعديل في بطاقات الملاحظات */
+    .btn-sm {
+        padding: 6px 10px;
+        min-width: 36px;
+    }
+
+    /* تحسين عرض الجداول على الشاشات الصغيرة جداً */
+    .table-responsive {
+        margin-bottom: 15px;
+    }
+
+    /* تحسين النوافذ المنبثقة للشاشات الصغيرة */
+    .modal-dialog {
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+
+    /* تحسين حجم الأيقونات في الشاشات الصغيرة */
+    .fas, .fab {
+        font-size: 1.1em;
+    }
+
+    /* تحسين روابط وسائل التواصل الاجتماعي */
+    .social-links a {
+        font-size: 1.8rem;
+        padding: 8px;
+    }
+}
+
+/* تنسيقات للشاشات الصغيرة (الأجهزة اللوحية الصغيرة) */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        touch-action: manipulation; /* تحسين استجابة اللمس */
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .d-flex .col-md-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* تحسين النماذج للشاشات الصغيرة */
+    .form-control, .form-select {
+        font-size: 16px; /* منع التكبير التلقائي في iOS */
+        padding: 12px;
+    }
+
+    /* تحسين الأزرار للشاشات الصغيرة */
+    .btn {
+        padding: 8px 16px;
+        min-height: 44px; /* الحد الأدنى لارتفاع الزر لسهولة اللمس */
+        touch-action: manipulation; /* تحسين استجابة اللمس */
+    }
+
+    /* تحسين الجداول على الشاشات الصغيرة */
+    .table {
+        font-size: 0.9rem;
+    }
+
+    .table th, .table td {
+        padding: 10px 8px;
+    }
+
+    /* تحسين النوافذ المنبثقة للشاشات الصغيرة */
+    .modal-dialog {
+        margin: 20px auto;
+        max-width: calc(100% - 40px);
+    }
+
+    /* تحسين المسافات بين العناصر القابلة للنقر */
+    .list-group-item {
+        padding: 12px 15px;
+    }
+}
+
+/* تنسيقات للشاشات المتوسطة (الأجهزة اللوحية الكبيرة) */
+@media (max-width: 992px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .d-flex .col-md-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* تحسين النماذج للشاشات المتوسطة */
+    .form-control, .form-select {
+        padding: 12px;
+    }
+
+    /* تحسين الأزرار للشاشات المتوسطة */
+    .btn {
+        padding: 8px 16px;
+        touch-action: manipulation; /* تحسين استجابة اللمس */
+    }
+
+    /* تحسين الجداول على الشاشات المتوسطة */
+    .table {
+        font-size: 0.95rem;
+    }
+
+    /* تحسين النوافذ المنبثقة للشاشات المتوسطة */
+    .modal-dialog {
+        margin: 30px auto;
+        max-width: 90%;
+    }
+
+    /* تحسين المسافات بين العناصر القابلة للنقر */
+    .list-group-item {
+        padding: 12px 15px;
+    }
+
+    /* تحسين بطاقات الملاحظات */
+    .note-card {
+        margin-bottom: 20px;
+    }
+}

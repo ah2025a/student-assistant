@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - مساعد الدراسة الذكي</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- شريط علوي (Navbar) -->
+    <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">مساعد الطالب الذكي</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html"><i class="fas fa-home ms-1"></i> الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="schedule.html"><i class="fas fa-calendar-alt ms-1"></i> جدول الدراسة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="notes.html"><i class="fas fa-sticky-note ms-1"></i> ملاحظاتي</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="contact.html"><i class="fas fa-envelope ms-1"></i> تواصل معنا</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="fas fa-paper-plane ms-2"></i> تواصل معنا</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">مرحباً بك في موقع مساعد الطالب الذكي. نسعد بتواصلك معنا ونتطلع لسماع اقتراحاتك واستفساراتك. قم بملء النموذج التالي وسنقوم بالرد عليك في أقرب وقت ممكن.</p>
+
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">الاسم الكامل <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="fullName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phoneNumber" class="form-label">رقم الهاتف <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="phoneNumber" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">البريد الإلكتروني</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">الموضوع</label>
+                                <select class="form-select" id="subject">
+                                    <option value="general">استفسار عام</option>
+                                    <option value="technical">مشكلة تقنية</option>
+                                    <option value="suggestion">اقتراح</option>
+                                    <option value="cooperation">طلب تعاون</option>
+                                    <option value="other">أخرى</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">الرسالة <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter">
+                                <label class="form-check-label" for="newsletter">أرغب في تلقي نشرتنا الإخبارية</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0"><i class="fas fa-info-circle ms-2"></i> معلومات التواصل</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-map-marker-alt fa-lg text-primary ms-3"></i>
+                            <div>
+                                <h6 class="mb-0">العنوان</h6>
+                                <p class="mb-0">كلية المجتمع بلاد الروس - سنحان، صنعاء، اليمن</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-phone fa-lg text-primary ms-3"></i>
+                            <div>
+                                <h6 class="mb-0">الهاتف</h6>
+                                <p class="mb-0">772235557</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-envelope fa-lg text-primary ms-3"></i>
+                            <div>
+                                <h6 class="mb-0">البريد الإلكتروني</h6>
+                                <p class="mb-0">info@bccr.edu.ye</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-clock fa-lg text-primary ms-3"></i>
+                            <div>
+                                <h6 class="mb-0">ساعات العمل</h6>
+                                <p class="mb-0">السبت - الخميس: 8:00 صباحاً - 4:00 مساءً</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0"><i class="fas fa-share-alt ms-2"></i> تابعنا على وسائل التواصل الاجتماعي</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-around social-links">
+                            <a href="https://m.facebook.com/sanhancollege/" class="text-primary fs-2" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-info fs-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-danger fs-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-primary fs-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-success fs-2"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="fas fa-map ms-2"></i> خريطة الموقع</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d492558.34978237265!2d44.8406982421875!3d15.316141498820866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1603b7004c19bf01%3A0x184b77dc58c67aff!2z2YPZhNmK2Kkg2KfZhNmF2KzYqtmF2Lkg2LPZhtit2KfZhiDZiNio2YTYp9ivINin2YTYsdmI2LM!5e0!3m2!1sar!2s!4v1755733980684!5m2!1sar!2s" 
+                                    width="100%" 
+                                    height="250" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0"><i class="fas fa-question-circle ms-2"></i> الأسئلة الشائعة</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        ما هو مساعد الدراسة الذكي؟
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        مساعد الدراسة الذكي هو تطبيق ويب مصمم لمساعدة الطلاب على تنظيم دراستهم، وجدولة مهامهم، وتدوين ملاحظاتهم بسهولة وفعالية. يوفر التطبيق واجهة سهلة الاستخدام وأدوات متعددة لتحسين أداء الطلاب الأكاديمي.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        هل التطبيق مجاني؟
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        نعم، النسخة الأساسية من التطبيق مجانية بالكامل وتتوفر لجميع الطلاب. كما أننا نخطط لإطلاق نسخة مدفوعة في المستقبل تحتوي على ميزات إضافية متقدمة.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        كيف يمكنني حفظ بياناتي؟
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        يتم حفظ جميع بياناتك محلياً على جهازك، مما يضمن خصوصيتك وأمان معلوماتك. في النسخ المستقبلية، سنضيف إمكانية المزامنة مع السحابة لحفظ بياناتك والوصول إليها من أجهزة متعددة.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-dark text-white mt-5 py-3">
+        <div class="container text-center">
+            <p>© 2025 كلية المجتمع بلاد الروس - سنحان. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/contact.js"></script>
+</body>
+</html>
