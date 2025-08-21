@@ -3,15 +3,19 @@ let noteForm, noteTitle, noteSubject, noteContent, noteTags, notesContainer, sea
 
 // دالة لتحديث عرض الملاحظات بناءً على حجم الشاشة
 function updateNotesView() {
-    if (window.innerWidth <= 576) {
-        // عرض الملاحظات في شكل أكورديون للشاشات الصغيرة
-        if (notesContainer) notesContainer.classList.add('d-none');
-        if (notesMobileView) notesMobileView.classList.remove('d-none');
-        renderMobileNotes();
-    } else {
-        // عرض الملاحظات في شكل بطاقات للشاشات الكبيرة
-        if (notesContainer) notesContainer.classList.remove('d-none');
-        if (notesMobileView) notesMobileView.classList.add('d-none');
+    try {
+        if (window.innerWidth <= 576) {
+            // عرض الملاحظات في شكل أكورديون للشاشات الصغيرة
+            if (notesContainer) notesContainer.classList.add('d-none');
+            if (notesMobileView) notesMobileView.classList.remove('d-none');
+            renderMobileNotes();
+        } else {
+            // عرض الملاحظات في شكل بطاقات للشاشات الكبيرة
+            if (notesContainer) notesContainer.classList.remove('d-none');
+            if (notesMobileView) notesMobileView.classList.add('d-none');
+        }
+    } catch (error) {
+        console.error('Error in updateNotesView:', error);
     }
 }
 
@@ -24,6 +28,8 @@ function renderMobileNotes() {
 
     // الحصول على جميع بطاقات الملاحظات المرئية (غير المخفية بواسطة الفلترة)
     const noteCards = document.querySelectorAll('#notesContainer .note-card:not([style*="display: none"])');
+
+    let allAccordionItemsHtml = ''; // لجمع كل عناصر الأكورديون كسلسلة HTML
 
     // تكرار كل بطاقة ملاحظة
     noteCards.forEach((card, index) => {
@@ -73,84 +79,43 @@ function renderMobileNotes() {
                 subjectClass = 'bg-secondary';
         }
 
-        // إنشاء عنصر الأكورديون
-        const accordionItem = document.createElement('div');
-        accordionItem.className = 'accordion-item notes-accordion-item';
-
-        // إنشاء رأس الأكورديون
-        const accordionHeader = document.createElement('h2');
-        accordionHeader.className = 'accordion-header';
-        accordionHeader.id = `heading-${noteId}`;
-
-        const accordionButton = document.createElement('button');
-        accordionButton.className = 'accordion-button collapsed notes-accordion-button';
-        accordionButton.type = 'button';
-        accordionButton.setAttribute('data-bs-toggle', 'collapse');
-        accordionButton.setAttribute('data-bs-target', `#collapse-${noteId}`);
-        accordionButton.setAttribute('aria-expanded', 'false');
-        accordionButton.setAttribute('aria-controls', `collapse-${noteId}`);
-
-        // إضافة محتوى الزر
-        accordionButton.innerHTML = `
-            <div class="d-flex justify-content-between align-items-center w-100">
-                <span>${title}</span>
-                <span class="badge ${subjectClass} notes-badge">${subjectText}</span>
+        // بناء سلسلة HTML لعنصر الأكورديون
+        const accordionItemHtml = `
+            <div class="accordion-item notes-accordion-item">
+                <h2 class="accordion-header" id="heading-${noteId}">
+                    <button class="accordion-button collapsed notes-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${noteId}" aria-expanded="false" aria-controls="collapse-${noteId}">
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <span>${title}</span>
+                            <span class="badge ${subjectClass} notes-badge">${subjectText}</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse-${noteId}" class="accordion-collapse collapse" aria-labelledby="heading-${noteId}">
+                    <div class="accordion-body notes-accordion-body">
+                        <p>${content}</p>
+                        ${tagsHtml ? `<div class="mt-2">${tagsHtml}</div>` : ''}
+                        <div class="text-muted mt-2">
+                            <small>${date}</small>
+                        </div>
+                        <div class="notes-actions">
+                            <button class="btn btn-sm btn-outline-secondary edit-note-mobile" data-note-id="${noteId}">
+                                <i class="fas fa-edit"></i> تعديل
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-note-mobile" data-note-id="${noteId}">
+                                <i class="fas fa-trash"></i> حذف
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         `;
-
-        accordionHeader.appendChild(accordionButton);
-        accordionItem.appendChild(accordionHeader);
-
-        // إنشاء محتوى الأكورديون
-        const accordionCollapse = document.createElement('div');
-        accordionCollapse.id = `collapse-${noteId}`;
-        accordionCollapse.className = 'accordion-collapse collapse';
-        accordionCollapse.setAttribute('aria-labelledby', `heading-${noteId}`);
-
-        const accordionBody = document.createElement('div');
-        accordionBody.className = 'accordion-body notes-accordion-body';
-
-        // إضافة محتوى الجسم
-        accordionBody.innerHTML = `
-            <p>${content}</p>
-            ${tagsHtml ? `<div class="mt-2">${tagsHtml}</div>` : ''}
-            <div class="text-muted mt-2">
-                <small>${date}</small>
-            </div>
-            <div class="notes-actions">
-                <button class="btn btn-sm btn-outline-secondary edit-note-mobile" data-note-id="${noteId}">
-                    <i class="fas fa-edit"></i> تعديل
-                </button>
-                <button class="btn btn-sm btn-outline-danger delete-note-mobile" data-note-id="${noteId}">
-                    <i class="fas fa-trash"></i> حذف
-                </button>
-            </div>
-        `;
-
-        accordionCollapse.appendChild(accordionBody);
-        accordionItem.appendChild(accordionCollapse);
-
-        notesAccordion.appendChild(accordionItem);
+        allAccordionItemsHtml += accordionItemHtml;
     });
 
-    // إضافة مستمعي الأحداث لأزرار التعديل والحذف في عرض الهاتف المحمول
-    document.querySelectorAll('.edit-note-mobile').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const noteId = this.getAttribute('data-note-id');
-            if (typeof editNote === 'function') {
-                editNote(noteId);
-            }
-        });
-    });
+    // تعيين سلسلة HTML المجمعة إلى notesAccordion مرة واحدة
+    notesAccordion.innerHTML = allAccordionItemsHtml;
 
-    document.querySelectorAll('.delete-note-mobile').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const noteId = this.getAttribute('data-note-id');
-            if (typeof deleteNote === 'function') {
-                deleteNote(noteId);
-            }
-        });
-    });
+    
 }
 
 // انتظار تحميل الصفحة بالكامل
@@ -177,18 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateNotesView();
     window.addEventListener('resize', updateNotesView);
 
-    // مراقبة التغييرات في حاوية الملاحظات (للتحديث التلقائي عند الإضافة/الحذف/التعديل)
-    if (notesContainer) {
-        const observer = new MutationObserver(function(mutations) {
-            updateNotesView();
-        });
-
-        observer.observe(notesContainer, { 
-            childList: true,
-            subtree: true,
-            attributes: true // Observe attribute changes for display style
-        });
-    }
+    
 
 
     // إضافة حدث زر الإلغاء
@@ -325,6 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // حفظ التغييرات
                 saveNotes();
                 updateNotesChart();
+                updateNotesView();
 
                 // إغلاق النافذة المنبثقة
                 const modal = bootstrap.Modal.getInstance(document.getElementById('addNoteModal'));
@@ -350,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // دالة تهيئة مستمعي الأحداث
 function initEventListeners() {
-    // استخدام تفويض الأحداث للتعامل مع أزرار التعديل
+    // استخدام تفويض الأحداث للتعامل مع أزرار التعديل والحذف في عرض البطاقات
     document.addEventListener('click', function(e) {
         if (e.target.closest('.edit-note')) {
             const noteCard = e.target.closest('.note-card');
@@ -360,11 +315,25 @@ function initEventListeners() {
             }
         }
 
-        // استخدام تفويض الأحداث للتعامل مع أزرار الحذف
         if (e.target.closest('.delete-note')) {
             const noteCard = e.target.closest('.note-card');
             if (noteCard) {
                 const noteId = noteCard.getAttribute('data-note-id');
+                deleteNote(noteId);
+            }
+        }
+
+        // استخدام تفويض الأحداث للتعامل مع أزرار التعديل والحذف في عرض الهاتف المحمول (الأكورديون)
+        if (e.target.closest('.edit-note-mobile')) {
+            const noteId = e.target.closest('.edit-note-mobile').getAttribute('data-note-id');
+            if (typeof editNote === 'function') {
+                editNote(noteId);
+            }
+        }
+
+        if (e.target.closest('.delete-note-mobile')) {
+            const noteId = e.target.closest('.delete-note-mobile').getAttribute('data-note-id');
+            if (typeof deleteNote === 'function') {
                 deleteNote(noteId);
             }
         }
@@ -599,6 +568,7 @@ function deleteNote(noteId) {
         noteCard.remove();
         saveNotes();
         updateNotesChart();
+        updateNotesView();
     }
 }
 
