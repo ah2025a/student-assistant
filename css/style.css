@@ -1,10 +1,27 @@
-/* تنسيقات عامة */
+/* تنسيقات عامة بأسلوب ناسا */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #0a0a0a;
+    color: #ffffff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: url('../images/nasa-style-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
 }
 
 .container {
@@ -12,33 +29,49 @@ body {
     padding: 0 15px;
 }
 
-/* تنسيقات شريط التنقل */
+/* تنسيقات شريط التنقل بأسلوب ناسا */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
-    padding: 10px 0;
+    background-color: rgba(10, 10, 30, 0.9) !important;
+    border-bottom: 1px solid rgba(100, 150, 255, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 15px 0;
+}
+
+/* نصوص العناوين الرئيسية باللون الأبيض */
+.card-header h5, .card-header i {
+    color: #ffffff !important;
 }
 
 .nav-link {
     margin-left: 10px;
     margin-right: 10px;
     transition: all 0.3s ease;
-    padding: 5px 10px;
+    padding: 8px 15px;
+    color: #ffffff !important;
+    border-radius: 5px;
 }
 
 .nav-link:hover {
     transform: translateY(-2px);
+    background-color: rgba(100, 150, 255, 0.2);
+    color: #ffffff !important;
 }
 
 .navbar-brand {
     font-size: 1.4rem;
     font-weight: bold;
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(100, 150, 255, 0.5);
 }
 
-/* تنسيقات البطاقات */
+/* تنسيقات البطاقات بأسلوب ناسا */
 .card {
+    background-color: rgba(20, 20, 40, 0.8);
+    border: 1px solid rgba(100, 150, 255, 0.3);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 20px;
     border: none;
 }
@@ -56,12 +89,22 @@ body {
     padding: 20px;
 }
 
-/* تنسيقات الأزرار */
+/* تنسيقات الأزرار بأسلوب ناسا */
 .btn {
-    border-radius: 20px;
+    background-color: rgba(50, 100, 200, 0.8);
+    border: none;
+    border-radius: 5px;
     padding: 8px 20px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
     font-weight: 500;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: rgba(70, 130, 230, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .btn:hover {
@@ -96,55 +139,103 @@ body {
     border-right: 5px solid #28a745;
 }
 
-/* تنسيقات الجدول */
+/* تنسيقات الجدول بأسلوب ناسا */
+.schedule-table-container {
+    background-color: rgba(20, 20, 40, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: inset 0 0 10px rgba(100, 150, 255, 0.2);
+}
+
 .table {
+    color: #ffffff;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #fff;
 }
 
 .table th {
-    background-color: #f1f1f1;
+    background-color: rgba(50, 100, 200, 0.7);
+    border: 1px solid rgba(100, 150, 255, 0.5);
     font-weight: 600;
 }
 
 .table td {
+    background-color: rgba(30, 30, 50, 0.6);
+    border: 1px solid rgba(100, 150, 255, 0.3);
     vertical-align: middle;
 }
 
-/* تنسيقات الملاحظات */
-.note-card {
-    transition: all 0.3s ease;
-    margin-bottom: 15px;
+/* تنسيقات الملاحظات بأسلوب ناسا */
+.notes-container {
+    background-color: rgba(20, 20, 40, 0.6);
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 6px rgba(0,0,0,.1);
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(100, 150, 255, 0.3);
+}
+
+.note-card {
+    background-color: rgba(30, 30, 50, 0.8);
+    border-left: 4px solid #6495ED;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
 .note-card:hover {
-    transform: translateY(-5px);
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(100, 150, 255, 0.3);
 }
 
-/* تنسيقات النافذة المنبثقة */
+/* تنسيقات النافذة المنبثقة بأسلوب ناسا */
 .modal-content {
+    background-color: rgba(20, 20, 40, 0.95);
+    border: 1px solid rgba(100, 150, 255, 0.3);
     border-radius: 15px;
-    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .modal-header {
     border-radius: 15px 15px 0 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(100, 150, 255, 0.3);
+    background-color: rgba(30, 30, 50, 0.8);
 }
 
 .modal-footer {
-    border-top: 1px solid #eee;
+    border-top: 1px solid rgba(100, 150, 255, 0.3);
+    background-color: rgba(30, 30, 50, 0.8);
 }
 
-/* تنسيقات التذييل */
+.modal-title {
+    color: #ffffff;
+}
+
+.modal-body {
+    color: #ffffff;
+}
+
+.form-control, .form-select {
+    background-color: rgba(40, 40, 60, 0.7);
+    border: 1px solid rgba(100, 150, 255, 0.3);
+    color: #ffffff;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: rgba(50, 50, 70, 0.8);
+    border-color: rgba(100, 150, 255, 0.6);
+    color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(100, 150, 255, 0.25);
+}
+
+/* تنسيقات التذييل بأسلوب ناسا */
 footer {
+    background-color: rgba(10, 10, 30, 0.9);
+    border-top: 1px solid rgba(100, 150, 255, 0.3);
     margin-top: auto;
-    box-shadow: 0 -2px 10px rgba(0,0,0,.1);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
     padding: 20px 0;
+    color: #ffffff;
 }
 
 /* تنسيقات الخريطة */
@@ -192,6 +283,35 @@ footer {
 
 .accordion-button:focus {
     box-shadow: none;
+}
+
+/* تأثيرات بصرية إضافية لأسلوب ناسا */
+.glow {
+    text-shadow: 0 0 10px rgba(100, 150, 255, 0.8);
+}
+
+/* تأثير النجوم المتحركة */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
 }
 
 /* تحسينات خاصة باللمس للأجهزة المحمولة */
@@ -242,6 +362,17 @@ html {
 /* تحسين الجداول للأجهزة ذات الشاشات اللمسية */
 .table-hover tbody tr {
     touch-action: manipulation; /* تحسين استجابة اللمس */
+}
+
+/* تحسينات للشاشات الصغيرة بأسلوب ناسا */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    .schedule-table-container {
+        overflow-x: auto;
+    }
 }
 
 /* تحسين عرض المهام على الشاشات الصغيرة */
@@ -347,8 +478,10 @@ html {
 
 .schedule-mobile-view .accordion-button {
     font-weight: bold;
-    background-color: #f8f9fa;
+    background-color: rgba(30, 30, 50, 0.8);
     border-radius: 10px;
+    color: #ffffff;
+    border: 1px solid rgba(100, 150, 255, 0.3);
 }
 
 .schedule-mobile-view .accordion-body {

@@ -3,14 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مساعد الطالب الذكي </title>
+    <title>مساعد الطالب الذكي - كلية المجتمع بلاد الروس</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- تأثيرات ناسا -->
+    <style>
+        .main-bg {
+            background-image: url('./images/nasa-style-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .main-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+    </style>
 </head>
-<body>
+<body class="main-bg">
     <!-- شريط علوي (Navbar) -->
     <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
         <div class="container-fluid">
@@ -125,5 +146,7 @@
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>
+    <!-- تأثيرات ناسا -->
+    <script src="./js/nasa-effects.js"></script>
 </body>
 </html>

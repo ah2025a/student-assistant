@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الصور - مساعد الطالب الذكي</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gallery-img {
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
+        .gallery-item {
+            margin-bottom: 30px;
+        }
+        .gallery-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">مساعد الطالب الذكي</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html"><i class="fas fa-chart-line"></i> لوحة التحكم</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="schedule.html"><i class="fas fa-calendar-alt"></i> الجدول الزمني</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tasks.html"><i class="fas fa-tasks"></i> المهام</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="exams.html"><i class="fas fa-file-alt"></i> الامتحانات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notes.html"><i class="fas fa-sticky-note"></i> الملاحظات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources.html"><i class="fas fa-book"></i> الموارد</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> الإعدادات</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">معرض صور لبيئات الدراسة</h2>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-4 gallery-item">
+                <div class="gallery-title">مساحة دراسة فردية</div>
+                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مساحة دراسة فردية" class="img-fluid gallery-img">
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-item">
+                <div class="gallery-title">غرفة دراسة جماعية</div>
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="غرفة دراسة جماعية" class="img-fluid gallery-img">
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-item">
+                <div class="gallery-title">المكتبة الجامعية</div>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="المكتبة الجامعية" class="img-fluid gallery-img">
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-item">
+                <div class="gallery-title">شرفة للدراسة</div>
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="شرفة للدراسة" class="img-fluid gallery-img">
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-item">
+                <div class="gallery-title">قاعة المحاضرات</div>
+                <img src="https://images.unsplash.com/photo-1524784998235-5757e396f08b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="قاعة المحاضرات" class="img-fluid gallery-img">
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-item">
+                <div class="gallery-title">المختبر العلمي</div>
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="المختبر العلمي" class="img-fluid gallery-img">
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-item">
+                <div class="gallery-title">المكتبة التاريخية</div>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="المكتبة التاريخية" class="img-fluid gallery-img">
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-item">
+                <div class="gallery-title">المكتبة الرقمية</div>
+                <img src="https://images.unsplash.com/photo-1524995100481-10243b04e7a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="المكتبة الرقمية" class="img-fluid gallery-img">
+            </div>
+
+            <div class="col-md-6 col-lg-4 gallery-item">
+                <div class="gallery-title">غرفة دراسة هادئة</div>
+                <img src="https://images.unsplash.com/photo-1524784998235-5757e396f08b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="غرفة دراسة هادئة" class="img-fluid gallery-img">
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white mt-5 py-3">
+        <div class="container text-center">
+            <p>© 2025 كلية المجتمع بلاد الروس - سنحان. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
