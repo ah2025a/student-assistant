@@ -3,35 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مساعد الطالب الذكي - كلية المجتمع بلاد الروس</title>
+    <title>مساعد الطالب الذكي </title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- تأثيرات ناسا -->
-    <style>
-        .main-bg {
-            background-image: url('./images/nasa-style-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-        }
-        
-        .main-bg::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: -1;
-        }
-    </style>
 </head>
-<body class="main-bg">
+<body>
     <!-- شريط علوي (Navbar) -->
     <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
         <div class="container-fluid">
@@ -119,17 +98,117 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header bg-warning text-dark">
                         <h5 class="mb-0"><i class="fas fa-lightbulb ms-2"></i> نصائح للدراسة</h5>
                     </div>
                     <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> حدد أهدافاً واضحة لكل جلسة دراسة</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> خذ فترات راحة قصيرة كل 25-30 دقيقة</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> راجع مذاكراتك بانتظام</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i> اختر مكاناً هادئاً للدراسة</li>
-                        </ul>
+                        <div class="row">
+                            <div class="col-md-5 mb-3">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="مساعد الطالب الذكي" class="img-fluid rounded shadow-sm" style="width: 100%; height: auto;">
+                                <div class="mt-3 text-center">
+                                    <span class="badge bg-primary p-2">نصائح ذكية</span>
+                                    <span class="badge bg-success p-2 ms-2">دراسة مركزة</span>
+                                    <span class="badge bg-info p-2 ms-2">نجاح أكاديمي</span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="tips-container">
+                                    <div class="tip-item d-flex align-items-start mb-3 p-2 bg-light rounded">
+                                        <i class="fas fa-bullseye text-primary me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-1">حدد أهدافاً واضحة</h6>
+                                            <p class="mb-0 small text-muted">قسّم المواد إلى أهداف صغيرة قابلة للإنجاز</p>
+                                        </div>
+                                    </div>
+                                    <div class="tip-item d-flex align-items-start mb-3 p-2 bg-light rounded">
+                                        <i class="fas fa-coffee text-warning me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-1">خذ فترات راحة</h6>
+                                            <p class="mb-0 small text-muted">استخدم تقنية البومودورو (25 دقيقة دراسة - 5 د راحة)</p>
+                                        </div>
+                                    </div>
+                                    <div class="tip-item d-flex align-items-start mb-3 p-2 bg-light rounded">
+                                        <i class="fas fa-redo text-info me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-1">راجع مذاكراتك بانتظام</h6>
+                                            <p class="mb-0 small text-muted">استخدم دورة المراجعة المتكررة (1-3-7-14 يوم)</p>
+                                        </div>
+                                    </div>
+                                    <div class="tip-item d-flex align-items-start mb-3 p-2 bg-light rounded">
+                                        <i class="fas fa-home text-success me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-1">اختر مكاناً هادئاً</h6>
+                                            <p class="mb-0 small text-muted">مكان جيد الإضاءة وخالٍ من المشتتات</p>
+                                        </div>
+                                    </div>
+                                    <div class="tip-item d-flex align-items-start p-2 bg-light rounded">
+                                        <i class="fas fa-brain text-danger me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-1">حافظ على تركيزك</h6>
+                                            <p class="mb-0 small text-muted">أغلق الهاتف واطلب من الآخرين احترام وقت الدراسة</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-info text-dark">
+                        <h5 class="mb-0"><i class="fas fa-clock ms-2"></i> نصائح لتنظيم الوقت</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-5 mb-3">
+                                <img src="./images/A.png" alt="تنظيم الوقت" class="img-fluid rounded shadow-sm" style="width: 100%; height: auto;">
+                                <div class="mt-3 text-center">
+                                    <span class="badge bg-info p-2">إدارة الوقت</span>
+                                    <span class="badge bg-primary p-2 ms-2">كفاءة عالية</span>
+                                    <span class="badge bg-warning p-2 ms-2">توازن</span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="tips-container">
+                                    <div class="tip-item d-flex align-items-start mb-3 p-2 bg-light rounded">
+                                        <i class="fas fa-calendar-alt text-info me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-1">استخدم الجدول الزمني</h6>
+                                            <p class="mb-0 small text-muted">خصص وقتاً محدداً لكل مادة وركز على المواد الصعبة أولاً</p>
+                                        </div>
+                                    </div>
+                                    <div class="tip-item d-flex align-items-start mb-3 p-2 bg-light rounded">
+                                        <i class="fas fa-tasks text-primary me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-1">رتب الأولويات</h6>
+                                            <p class="mb-0 small text-muted">استخدم ماتريس إيزنهاور (عاجل/مهم) لتحديد أولويات المهام</p>
+                                        </div>
+                                    </div>
+                                    <div class="tip-item d-flex align-items-start mb-3 p-2 bg-light rounded">
+                                        <i class="fas fa-stopwatch text-warning me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-1">تجنب التسويف</h6>
+                                            <p class="mb-0 small text-muted">ابدأ بالمهام الصعبة أولاً وقسّمها إلى خطوات صغيرة</p>
+                                        </div>
+                                    </div>
+                                    <div class="tip-item d-flex align-items-start mb-3 p-2 bg-light rounded">
+                                        <i class="fas fa-mobile-alt text-danger me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-1">حدد وقتاً للهاتف</h6>
+                                            <p class="mb-0 small text-muted">خصص فترات محددة للتواصل الاجتماعي وتجنبها أثناء الدراسة</p>
+                                        </div>
+                                    </div>
+                                    <div class="tip-item d-flex align-items-start p-2 bg-light rounded">
+                                        <i class="fas fa-bed text-success me-3 mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-1">احترم وقت راحتك</h6>
+                                            <p class="mb-0 small text-muted">تأكد من الحصول على 7-8 ساعات نوم ليلاً لتحفيز الدماغ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,7 +225,5 @@
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>
-    <!-- تأثيرات ناسا -->
-    <script src="./js/nasa-effects.js"></script>
 </body>
 </html>
